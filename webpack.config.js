@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -24,10 +24,28 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+          },
+          {
+            loader: "sass-loader",
+          },
+        ],
+      },
     ],
   },
   optimization: {
     minimizer: [new UglifyJsPlugin()],
   },
-  plugin: [new CleanWebpackPlugin(["dist"])],
+  plugins: [
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: ["dist"],
+    }),
+  ],
 };
