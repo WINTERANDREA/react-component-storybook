@@ -1,0 +1,35 @@
+{
+  "name": "@andrea91winter/react-component-storybook",
+  "module": "dist/react-component-storybook",
+  "description": "Custom components for ReactJS projects",
+  "version": "1.0.0",
+  "author": {
+    "name": "Andrea Casero",
+    "email": "andrecasero@gmail.com"
+  },
+  "homepage": "https://github.com/WINTERANDREA/react-component-storybook#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:WINTERANDREA/react-component-storybook.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "docs": "start-storybook -p 9001 -c .storybook",
+    "docs:build": "build-storybook -c .storybook -o docs"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1",
+    "@storybook/addon-info": "^5.3.19",
+    "@storybook/components": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "react": "^16.13.1",
+    "storybook-addon-jsx": "^7.3.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
